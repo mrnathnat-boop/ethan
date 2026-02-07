@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Confession Diary</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+    }
+
+    /* LOGIN PAGE */
+    #loginBox {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #fdeff9, #ec38bc);
+    }
+
+    .login-box {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+    }
+
+    input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 25px;
+        border: none;
+        border-radius: 20px;
+        background: #ec38bc;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #c2185b;
+    }
+
+    .error {
+        color: red;
+        margin-top: 10px;
+    }
+
+    /* CONTENT PAGE */
+    #content {
+        display: none;
+        min-height: 100vh;
+        background-image: url("love.jpg"); /* BACKGROUND IMAGE */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 40px 20px;
+        color: white;
+    }
+
+    .overlay {
+        background: rgba(0,0,0,0.6);
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    h1, h2 {
+        color: #ffb6c1;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .poem {
+        margin-top: 20px;
+        font-style: italic;
+        text-align: center;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    audio {
+        width: 100%;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginBox">
+    <div class="login-box">
+        <h2>Login</h2>
+        <p>Enter the secret password 💖</p>
+        <input type="password" id="password" placeholder="Password">
+        <br>
+        <button onclick="checkPassword()">Login</button>
+        <div class="error" id="errorMsg"></div>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div id="content">
+    <div class="overlay">
+
+        <!-- MUSIC -->
+        <audio controls autoplay loop>
+            <source src="joe.mp3" type="audio/mpeg">
+        </audio>
+
+        <h1>Joelyn Dela Cruz</h1>
+
+        <p>
+            <strong>
+            I love you always my darling.  
+            Magbago man ang ihip ng mundo pati ang ihip ng hangin,  
+            wala silang magagawa — tayo pa rin.  
+            Mahal ko, mwapss 💕  
+            Mahal na mahal ka ni Ethan na darling mo.
+            </strong>
+        </p>
+
+        <!-- IMAGE -->
+        <img src="love.jpg" alt="Love Image">
+
+        <h2>My Poems for You</h2>
+
+        <div class="poem">
+            Sa bawat pintig ng puso ko,  
+            pangalan mo ang laman.  
+            Sa bawat hininga ko,  
+            ikaw ang dahilan.
+        </div>
+
+        <div class="poem">
+            Kahit ang mundo’y magbago,  
+            ang pag-ibig ko’y hindi.  
+            Ikaw ang panata ng puso,  
+            ngayon at sa huli.
+        </div>
+
+        <div class="poem">
+            Kung may isang tahanan ang kaluluwa,  
+            ikaw iyon, mahal ko.  
+            Sa yakap ng pagmamahal,  
+            doon ako uuwi sa’yo.
+        </div>
+
+    </div>
+</div>
+
+<script>
+function checkPassword() {
+    const password = document.getElementById("password").value;
+
+    if (password === "joelyn") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        document.getElementById("errorMsg").innerText = "Password incorrect";
+    }
+}
+</script>
+
+</body>
+</html>
